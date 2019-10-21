@@ -6,6 +6,7 @@ var castleSchema = new mongoose.Schema({
     required: "Name cant be blank"
   },
   image: String,
+  text: String,
   completed: {
     type: Boolean,
     default: false
