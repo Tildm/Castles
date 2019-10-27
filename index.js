@@ -38,7 +38,10 @@ app.get("/", (req, res)=>{
 app.use(cors());
 app.use("/castles", castleRoutes);
 
-if(process.env.NODE_ENV === "production") {
+// if(process.env.NODE_ENV === "production") {
+//   app.use(express.static("client/build"))
+
+if(process.env.DB_CONNECTION === "production") {
   app.use(express.static("client/build"))
 
 app.get("*", (req, res)=> {
