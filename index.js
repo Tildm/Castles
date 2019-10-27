@@ -31,9 +31,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 
-app.get("/", (req, res)=>{
-  res.send("Hello happy root!")
-});
+// app.get("/", (req, res)=>{
+//   res.send("Hello happy root!")
+// });
 
 app.use(cors());
 app.use("/castles", castleRoutes);
