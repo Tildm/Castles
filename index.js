@@ -32,14 +32,15 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(cors());
 app.use("/castles", castleRoutes);
+app.get("/castles", castleRoutes);
 
-app.get("/", (req, res)=>{
-  res.send("Hello happy root!")
-});
+// app.get("/", (req, res)=>{
+//   res.send("Hello happy root!")
+// });
 
 
 
-if(process.env.NODE_ENV === "production npm start") {
+if(process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"))
 
 // if(process.env.DB_CONNECTION === "production") {
