@@ -32,11 +32,11 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(cors());
 app.use("/castles", castleRoutes);
-app.get("/castles", castleRoutes);
+// app.get("/castles", castleRoutes);
 
-// app.get("/", (req, res)=>{
-//   res.send("Hello happy root!")
-// });
+app.get("/castles", (req, res)=>{
+  res.send("Hello happy root!")
+});
 
 
 
