@@ -7,6 +7,7 @@ var castleSchema = new mongoose.Schema({
   },
   image: String,
   text: String,
+  vote: Number,
   completed: {
     type: Boolean,
     default: false

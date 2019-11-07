@@ -32,12 +32,18 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(cors());
 app.use("/castles", castleRoutes);
-// app.get("/castles", castleRoutes);
+app.get("/castles", castleRoutes);
 
-app.get("/castles", (req, res)=>{
+app.get("/", (req, res)=>{
   res.send("Hello happy root!")
 });
 
+public function __construct($config = 'rest'){
+   header('Access-Control-Allow-Origin: *');
+   header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
+   header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token');
+      parent::__construct();
+    }
 
 
 if(process.env.NODE_ENV === "production") {
