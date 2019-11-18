@@ -26,6 +26,11 @@ var PORT = process.env.PORT || 4000;
 
 var castleRoutes = require("./routes/castles")
 
+app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    next();
+});
+
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
