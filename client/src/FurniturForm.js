@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 
-class CastleForm extends Component {
+class FurniturForm extends Component {
   constructor(props){
     super(props);
     this.handleChange=this.handleChange.bind(this);
@@ -23,7 +23,7 @@ class CastleForm extends Component {
 
 
   handleSubmit(){
-    this.props.addCastle(this.state.name,
+    this.props.addFurnitur(this.state.name,
                          this.state.image,
                          this.state.text
     );
@@ -38,13 +38,13 @@ class CastleForm extends Component {
     <form onSubmit={this.handleSubmit}>
       <input type = "text"
       name="name"
-      placeholder="Castle"
+      placeholder="Furnitur"
       value={this.state.name}
       onChange={this.handleChange}
       />
       <input type = "text"
       name="image"
-      placeholder="Castle Image"
+      placeholder="Furnitur Image"
       value={this.state.image}
       onChange={this.handleChange}
       />
@@ -63,4 +63,4 @@ class CastleForm extends Component {
 
 }
 
-export default CastleForm;
+export default FurniturForm;

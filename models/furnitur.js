@@ -1,6 +1,6 @@
 var mongoose = require("mongoose");
 
-var castleSchema = new mongoose.Schema({
+var furniturSchema = new mongoose.Schema({
   name: {
     type: String,
     required: "Name cant be blank"
@@ -18,5 +18,5 @@ var castleSchema = new mongoose.Schema({
   }
 });
 
-var Castle = mongoose.model("Castle", castleSchema);
-module.exports = Castle;
+var Furnitur = mongoose.model("Furnitur", furniturSchema);
+module.exports = Furnitur;

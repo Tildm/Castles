@@ -7,11 +7,11 @@ var cors = require("cors");
 
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://Istvan:Depeche75@cluster0-5d6il.mongodb.net/test?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://Istvan:depeche@clusteradvfurnit-m2yvl.mongodb.net/test?retryWrites=true&w=majority', {
 	useNewUrlParser: true,
 	useCreateIndex: true
 }).then(() => {
-	console.log('Connected to the atlas DB!');
+	console.log('Connected to the atlas DB_ADV!');
 }).catch(err => {
 	console.log('ERROR:', err.message);
 });
@@ -24,7 +24,7 @@ var PORT = process.env.PORT || 4000;
 // var port = process.env.PORT || 3000;
 
 
-var castleRoutes = require("./routes/castles")
+var furniturRoutes = require("./routes/furniturs")
 
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -36,8 +36,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(cors());
-app.use("/castles", castleRoutes);
-app.get("/castles", castleRoutes);
+app.use("/furniturs", furniturRoutes);
+app.get("/furniturs", furniturRoutes);
 
 app.get("/", (req, res)=>{
   res.send("Hello happy root!")

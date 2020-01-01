@@ -1,6 +1,6 @@
-const APIURL = "/castles/";
+const APIURL = "/furniturs/";
 
-export async function getCastles() {
+export async function getFurniturs() {
   return fetch(APIURL)
   .then(resp=> {
     if(!resp.ok) {
@@ -20,7 +20,7 @@ export async function getCastles() {
 }
 
 
-export async function createCastle(name, image, text){
+export async function createFurnitur(name, image, text){
   return fetch(APIURL, {method:"post",
                  headers: new Headers({
                    "Content-Type": "application/json",
@@ -44,7 +44,7 @@ export async function createCastle(name, image, text){
 }
 
 
-export async function removeCastle(id){
+export async function removeFurnitur(id){
   const deleteUrl = APIURL + id;
   fetch(deleteUrl, {
     method:"delete",
@@ -66,14 +66,14 @@ export async function removeCastle(id){
 }
 
 
-export async function updateCastle(castle){
-  const updateUrl = APIURL + castle._id;
+export async function updateFurnitur(furnitur){
+  const updateUrl = APIURL + furnitur._id;
   return fetch(updateUrl, {
     method:"put",
     headers: new Headers({
       "Content-Type": "application/json",
     }),
-    body: JSON.stringify({completed: !castle.completed}),
+    body: JSON.stringify({completed: !furnitur.completed}),
   })
   .then(resp=> {
     if(!resp.ok) {
