@@ -22,7 +22,7 @@
     "express": "^4.17.1",
     "gitignore": "^0.6.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.7.7",
+    "mongoose": "^5.8.3",
     "node-options": "0.0.7"
   }
 }
